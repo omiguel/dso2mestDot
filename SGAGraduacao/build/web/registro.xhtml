@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <body>
+        <h1>Registro de alunos</h1>
+        <b:row>
+            <b:column>
+                <h:form>
+                    <b:inputText value="#{controller.aluno.nome}">Informe seu nome:</b:inputText>
+                    <b:inputText value="#{controller.aluno.idade}" >Informe sua idade:</b:inputText>            
+                    <b:inputText value="#{controller.aluno.cpf}" >CPF</b:inputText>
+                    <b:inputText value="#{controller.aluno.data}" >Data de início</b:inputText>
+                    <b:inputText value="#{controller.aluno.professor}">Professor orientador</b:inputText>
+                    <b:inputText value="#{controller.aluno.laboratorio}">Laboratório de pesquisa</b:inputText>
+                    <h2>Formação</h2>
+                    <b:selectOneMenu value="#{controller.aluno.formacao}" label="Select your car's brand:">
+                        <f:selectItem itemLabel="Mestrado" itemValue="Mestrado"/>
+                        <f:selectItem itemLabel="Doutorado" itemValue="Mestrado"/>
+                    </b:selectOneMenu>
+                    <h2>Proficiencia</h2>
+                    <b:selectOneMenu value="#{controller.aluno.proeficiencia}" label="Select your car's brand:">
+                        <f:selectItem itemLabel="Inglês" itemValue="Francês"/>
+                        <f:selectItem itemLabel="Francês" itemValue="Francês"/>
+                        <f:selectItem itemLabel="Alemão" itemValue="Alemão"/>
+                        <f:selectItem itemLabel="Italiano" itemValue="Italiano"/>
+                    </b:selectOneMenu>
+                    <h2>Exame de qualificação</h2>
+                    <b:selectOneMenu value="#{controller.aluno.exameQualificacao}" label="Select your car's brand:">
+                        <f:selectItem itemLabel="Aprovado" itemValue="Aprovado"/>
+                        <f:selectItem itemLabel="Aprovado com pendências" itemValue="Aprovado com pendências"/>
+                        <f:selectItem itemLabel="Reprovado" itemValue="Reprovado"/>
+                    </b:selectOneMenu>
+                    <h2>Publicações</h2>
+                    <h3>Artigo em evento</h3>
+                    <b:row>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigo.nome}">Nome: </b:inputText>
+                        </b:column>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigo.qualis}">Qualis: </b:inputText>
+                        </b:column>
+                    </b:row>
+                    <b:row>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigo2.nome}">Nome: </b:inputText>
+                        </b:column>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigo2.qualis}">Qualis: </b:inputText>
+                        </b:column>
+                    </b:row>	
+                    <h3>Artigo em periódico</h3>
+                    <b:row>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigoperiodico.nome}">Nome: </b:inputText>
+                        </b:column>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigoperiodico.qualis}">Qualis: </b:inputText>
+                        </b:column>
+                    </b:row>
+                    <b:row>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigoperiodico2.nome}">Nome: </b:inputText>
+                        </b:column>
+                        <b:column col-md="6">
+                            <b:inputText value="#{controller.aluno.artigoperiodico2.qualis}">Qualis: </b:inputText>
+                        </b:column>
+                    </b:row>
+                    <h2>Estágio docência</h2>
+                    <b:inputText>Nome da disciplina</b:inputText>
+                    <b:inputText>Carga horária</b:inputText>
+                    <h2>Defesa de mestrado</h2>
+                    <b:selectOneMenu value="#{controller.aluno.defesa}" label="Select your car's brand:">
+                        <f:selectItem itemLabel="Aprovado" itemValue="Aprovado"/>
+                        <f:selectItem itemLabel="Aprovado com pendências" itemValue="Aprovado com pendências"/>
+                        <f:selectItem itemLabel="Reprovado" itemValue="Reprovado"/>
+                    </b:selectOneMenu>
+                    <h2>Defesa de doutorado</h2>
+                    <b:selectOneMenu value="#{controller.aluno.defesa}" label="Select your car's brand:">
+                        <f:selectItem itemLabel="Aprovado" itemValue="Aprovado"/>
+                        <f:selectItem itemLabel="Aprovado com pendências" itemValue="Aprovado com pendências"/>
+                        <f:selectItem itemLabel="Reprovado" itemValue="Reprovado"/>
+                    </b:selectOneMenu>
+                    <b:commandButton size="lg" value="Cadastrar" action="#{controller.cadastraUsuario()}">  
+                    </b:commandButton>
+                </h:form>
+            </b:column>
+        </b:row>
+        <b:row>
+            <b:column>
+                <h1>Sistema para gerenciamento de alunos de pós-graduação</h1>
+                <b:column>
+                    <b:button size="lg" outcome="index.xhtml" value="Home">  
+                    </b:button>
+                    <b:button size="lg" outcome="controle.xhtml" value="Controle">  
+                    </b:button>
+                    <b:button size="lg" outcome="estatistica.xhtml" value="Estatistica">  
+                    </b:button>  
+                </b:column>
+            </b:column>
+        </b:row>
+    </body>
+</html>
+
